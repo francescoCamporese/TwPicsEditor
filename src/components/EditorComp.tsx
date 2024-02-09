@@ -102,20 +102,20 @@ const EditorComp: FC<EditorCompProps> = ({}) => {
   return (
     <>
       {filteredImage ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 bg-white dark:bg-gray-800 sm:h-[calc(100vh-var(--appbar-height))]">
-          <div className="p-4 sm:pl-8 sm:pr-4">
+        <div className="file-edit-page">
+          <div className="img-preview-container">
             <img
               src={filteredImage}
               alt="Image"
-              className="max-w-full h-auto"
+              className="img-preview-elem"
             />
           </div>
-          <div className="p-4 sm:pr-8 sm:pl-4">
+          <div className="cmds-column">
             {Object.keys(filters).map((filter) => (
-              <div key={filter} className="mb-4">
+              <div key={filter} className="filter-div">
                 <label
                   htmlFor={filter}
-                  className="mr-2 text-gray-700 dark:text-gray-300"
+                  className="filter-label"
                 >
                   {filter}
                   <br />
@@ -145,20 +145,20 @@ const EditorComp: FC<EditorCompProps> = ({}) => {
                     onChange={(e) =>
                       updateFilterIntensity(filter, e.target.value)
                     }
-                    className="w-full"
+                    className="filter-input"
                   />
                 )}
               </div>
             ))}
-            <div className="flex flex-col sm:flex-row sm:justify-between">
+            <div className="buttons-container">
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2 sm:mb-0 sm:w-auto md:mr-2"
+                className="download-button"
                 onClick={downloadFilteredImage}
               >
                 Download filtered image
               </button>
               <button
-                className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mb-2 sm:mb-0 sm:w-auto"
+                className="reset-button"
                 onClick={() => {
                   setImage(null);
                   setDownloadFileName(null);
@@ -171,7 +171,7 @@ const EditorComp: FC<EditorCompProps> = ({}) => {
           </div>
         </div>
       ) : (
-        <div className="flex items-center justify-center bg-white dark:bg-gray-800 h-[calc(100vh-var(--appbar-height))]">
+        <div className="file-picker-page">
           <input type="file" accept="image/*" onChange={handleImageUpload} />
         </div>
       )}

@@ -6,4 +6,64 @@
   :root {
     --appbar-height: 64px;
   }
+
+  .bg-page {
+    @apply bg-white dark:bg-gray-800;
+  }
+
+  .file-edit-page {
+    @apply bg-page grid grid-cols-1 sm:grid-cols-2 sm:h-[calc(100vh-var(--appbar-height))];
+  }
+
+  .img-preview-container {
+    @apply p-4 sm:pl-8 sm:pr-4;
+  }
+
+  .img-preview-elem {
+    @apply max-w-full h-auto;
+  }
+
+  .cmds-column {
+    @apply p-4 sm:pr-8 sm:pl-4;
+  }
+
+  .filter-div {
+    @apply mb-4;
+  }
+
+  .filter-label {
+    @apply mr-2 text-gray-700 dark:text-gray-300;
+  }
+
+  .filter-input {
+    @apply w-full;
+  }
+
+  .buttons-container {
+    @apply flex flex-col sm:flex-row sm:justify-between;
+  }
+
+  .base-button {
+    @apply text-white font-bold py-2 px-4 rounded mb-2 sm:mb-0 sm:w-auto;
+  }
+
+  .download-button {
+    @apply base-button bg-blue-500 hover:bg-blue-700 md:mr-2;
+  }
+
+  .reset-button {
+    @apply base-button bg-gray-500 hover:bg-gray-700;
+  }
+
+  .file-picker-page {
+    @apply bg-page flex items-center justify-center h-[calc(100vh-var(--appbar-height))];
+  }
+
+  .appbar-container {
+    @apply bg-gray-900 text-white py-4 px-6 h-[var(--appbar-height)];
+  }
+
+  .appbar-text {
+    @apply text-2xl font-bold;
+  }
 }
