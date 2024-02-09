@@ -5,11 +5,10 @@ import EditorComp from "../components/EditorComp";
 interface HomeProps {}
 
 const Home: FC<HomeProps> = () => {
-  const appBarHeight = "64px";
   return (
     <>
-      <AppBarComp appBarHeight={appBarHeight} />
-      <EditorComp appBarHeight={appBarHeight} />
+      <AppBarComp />
+      <EditorComp />
     </>
   );
 };

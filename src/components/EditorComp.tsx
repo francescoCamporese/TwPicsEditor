@@ -7,11 +7,9 @@ interface Filter {
   step: string;
 }
 
-interface EditorCompProps {
-  appBarHeight: string;
-}
+interface EditorCompProps {}
 
-const EditorComp: FC<EditorCompProps> = ({ appBarHeight }) => {
+const EditorComp: FC<EditorCompProps> = ({}) => {
   const filtersDefaultValues = {
     blur: { value: "0", min: "0", max: "10", step: "0.1" },
     brightness: { value: "1", min: "0.5", max: "1.5", step: "0.01" },
@@ -104,13 +102,7 @@ const EditorComp: FC<EditorCompProps> = ({ appBarHeight }) => {
   return (
     <>
       {filteredImage ? (
-        <div
-          className={
-            "grid grid-cols-1 sm:grid-cols-2 bg-white dark:bg-gray-800 sm:h-[calc(100vh-" +
-            appBarHeight +
-            ")]"
-          }
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 bg-white dark:bg-gray-800 h-[calc(100vh-var(--appbar-height))]">
           <div className="p-4 sm:pl-8 sm:pr-4">
             <img
               src={filteredImage}
@@ -179,13 +171,7 @@ const EditorComp: FC<EditorCompProps> = ({ appBarHeight }) => {
           </div>
         </div>
       ) : (
-        <div
-          className={
-            "flex items-center justify-center bg-white dark:bg-gray-800 h-[calc(100vh-" +
-            appBarHeight +
-            ")]"
-          }
-        >
+        <div className="flex items-center justify-center bg-white dark:bg-gray-800 h-[calc(100vh-var(--appbar-height))]">
           <input type="file" accept="image/*" onChange={handleImageUpload} />
         </div>
       )}
