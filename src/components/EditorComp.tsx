@@ -102,7 +102,7 @@ const EditorComp: FC<EditorCompProps> = ({}) => {
   return (
     <>
       {filteredImage ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 bg-white dark:bg-gray-800 h-[calc(100vh-var(--appbar-height))]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 bg-white dark:bg-gray-800 sm:h-[calc(100vh-var(--appbar-height))]">
           <div className="p-4 sm:pl-8 sm:pr-4">
             <img
               src={filteredImage}
